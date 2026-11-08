@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise - Interactive Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>💰 SpendWise</h1>
+        <p>Track your money. Control your spending. Save more.</p>
+    </header>
+
+    <main>
+        <!-- DASHBOARD -->
+        <section class="card dashboard">
+            <h2>Your Budget Dashboard</h2>
+            <div class="stats">
+                <div class="stat"><span>Income</span><strong id="incomeDisplay">KES 0</strong></div>
+                <div class="stat"><span>Total Expenses</span><strong id="expenseDisplay">KES 0</strong></div>
+                <div class="stat"><span>Balance</span><strong id="balanceDisplay">KES 0</strong></div>
+                <div class="stat"><span>Savings Goal (20%)</span><strong id="savingsDisplay">KES 0</strong></div>
+            </div>
+            <p id="message">Enter your income and add expenses to see your advice.</p>
+            <div class="progress-wrap">
+                <div id="progressBar"></div>
+            </div>
+            <p id="progressText"></p>
+        </section>
+
+        <!-- INCOME FORM -->
+        <section class="card">
+            <h2>1. Set Monthly Income</h2>
+            <form id="incomeForm">
+                <input type="number" id="incomeInput" placeholder="e.g. 20000" min="1" required>
+                <button type="submit">Set Income</button>
+            </form>
+        </section>
+
+        <!-- EXPENSE FORM -->
+        <section class="card">
+            <h2>2. Add Expense</h2>
+            <form id="expenseForm">
+                <select id="categoryInput" required>
+                    <option value="">Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="number" id="amountInput" placeholder="Amount e.g. 5000" min="1" required>
+                <button type="submit">Add Expense</button>
+            </form>
+        </section>
+
+        <!-- EXPENSE LIST -->
+        <section class="card">
+            <h2>3. Your Expenses</h2>
+            <ul id="expenseList">
+                <li class="empty">No expenses yet. Add one above.</li>
+            </ul>
+            <button id="resetBtn">Reset All</button>
+        </section>
+    </main>
+
+    <footer><p>SpendWise | Power Learn Project - Week 7 Interactive</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
